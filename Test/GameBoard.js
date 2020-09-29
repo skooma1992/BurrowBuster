@@ -31,5 +31,27 @@ class GameBoard {
     });
   }
 
-  addObject;
+  addObject(pos, classes) {
+    this.grid[pos].classList.add(...classes);
+  }
+
+  removeObject(pos, classes) {
+    this.grid[pos].classList.remove(...classes);
+  }
+
+  objectExist(pos, object) {
+    return this.grid[pos].classList.contains(object);
+  }
+
+  rotateDiv(pos, deg) {
+    this.grid[pos].style.transform = `rotate(${deg}deg)`;
+  }
+
+  static createGameBoard(DOMGrid, level) {
+    const board = new this(DOMGrid);
+    board.createGrid(level);
+    return board;
+  }
 }
+
+export default GameBoard;

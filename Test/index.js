@@ -1,5 +1,6 @@
 import { LEVEL, OBJECT_TYPE } from "./setup";
-
+//class
+import Game from "./GameBoard";
 // Dom
 
 const gameGrid = document.querySelector("#game");
@@ -10,6 +11,7 @@ const startButton = document.querySelector("#start-button");
 
 const POWER_PILL_TIME = 10000;
 const GLOBAL_SPEED = 80;
+const gameBoard = GameBoard.createGameBoard(gameGrid, LEVEL);
 
 //setup
 
